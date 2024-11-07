@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Main Page</title>
+    <style>
+        img{
+        border:2px solid black;
+        margin-left:200px;
+        margin-top:100px;
+        }
+        body{
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+<h2>WELCOME!</h2>
+<div th:each="item : ${items}">
+    <img th:src="'data:image/jpeg;base64,' + ${item.base64Image}" height="350px" width="800px"><br>
+</div>
+<a th:href="@{/logout}">Logout</a><br>
+<a th:href="@{/signup}">Sign Up</a><br>
+<a th:href="@{/images}">Upload Image</a>
+</body>
+</html>
